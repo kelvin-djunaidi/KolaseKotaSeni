@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Helvetica Neue', 'Inter', Helvetica, Arial, sans-serif;
+    color: #1a1a1a;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Takes up most of the viewport */
+    overflow: hidden;
+    background-color: #f7f3f0;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('bg-city.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6;
+    filter: sepia(0.3) contrast(0.85) grayscale(0.5); /* Simulating the faded aesthetic */
+}
+
+/* A soft gradient overlay to add warmth/color */
+.color-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(237, 219, 212, 0.5) 0%, rgba(200, 220, 200, 0.4) 100%);
+    pointer-events: none;
+}
+
+/* Geometric overlays */
+.geometric-shapes {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+}
+
+.thick-red {
+    width: 3.5vw;
+    height: 150%;
+    background-color: #f26262;
+    top: -20%;
+    left: 36%;
+    transform: rotate(20deg); /* Skewed right */
+}
+
+.thick-green {
+    width: 3vw;
+    height: 150%;
+    background-color: #1cba73;
+    top: -20%;
+    left: 65%;
+    transform: rotate(-35deg); /* Skewed left */
+}
+
+.thick-black {
+    width: 80vw;
+    height: 3.5vw;
+    background-color: #080808;
+    top: 45%;
+    left: 23%;
+}
+
+.light-green-rect {
+    width: 25vw;
+    height: 48%;
+    background-color: rgba(161, 240, 187, 0.65);
+    top: 0;
+    right: 0;
+}
+
+.pink-line {
+    width: 2.2vw;
+    height: 60%;
+    background-color: #f76e6e;
+    top: 25%;
+    right: 21vw;
+    border-radius: 30px 30px 0 0;
+}
+
+/* Header & Logo */
+header {
+    position: absolute;
+    top: 50px;
+    left: 60px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.logo-text {
+    margin-top: -5px;
+}
+
+.logo-text h1 {
+    font-size: 32px;
+    line-height: 1.05;
+    font-weight: 500;
+    letter-spacing: 2px;
+    color: #2b395c; /* Dark blue */
+}
+
+.logo-text span {
+    font-size: 26px;
+    color: #8c7d7d; /* Warm light brownish grey */
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Bottom Content Section */
+.content-section {
+    display: flex;
+    padding: 70px 80px;
+    background-color: #fff;
+    gap: 20px;
+    flex-grow: 1; /* Fills remaining height */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-1 { flex: 0 0 25%; }
+.col-2 { flex: 0 0 45%; }
+.col-3 { flex: 0 0 30%; }
+
+.column h2 {
+    font-size: 42px;
+    font-weight: 200; /* Very thin font */
+    margin-bottom: 24px;
+    letter-spacing: -0.8px;
+    color: #1a1a1a;
+}
+
+.column ul {
+    list-style: none;
+}
+
+.column li {
+    margin-bottom: 12px;
+}
+
+.column a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+    font-weight: 300;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.column a:hover {
+    color: #f26262;
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .content-section {
+        padding: 50px 40px;
+    }
+    .column h2 {
+        font-size: 32px;
+    }
+    header {
+        top: 30px; left: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 40px;
+    }
+    .hero-container {
+        height: 50vh;
+    }
+    .thick-black {
+        top: 60%;
+        left: 0;
+        width: 100%;
+    }
+    .pink-line, .light-green-rect {
+        display: none; /* Simplify on mobile */
+    }
+}
