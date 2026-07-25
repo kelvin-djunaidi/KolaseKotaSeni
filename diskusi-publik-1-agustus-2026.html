@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diskusi Publik: Sabtu, 1 Agustus 2026 - KKS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@100;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+        .speakers-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+
+        .speaker-btn {
+            background-color: #fafaf9;
+            border: 1px solid #e7e5e4;
+            padding: 12px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: #444;
+            font-size: 16px;
+            font-weight: 300;
+            transition: all 0.2s ease;
+        }
+
+        .speaker-btn:hover {
+            background-color: #f26262;
+            color: #fff;
+            border-color: #f26262;
+            transform: translateY(-2px);
+        }
+
+        .speaker-section {
+            margin-bottom: 80px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #e7e5e4;
+        }
+
+        .speaker-section:last-of-type {
+            border-bottom: none;
+            margin-bottom: 40px;
+        }
+
+        .speaker-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 24px;
+        }
+
+        .speaker-avatar-circle {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 32px;
+            font-weight: 400;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .bg-red { background: linear-gradient(135deg, #f26262 0%, #ff8f8f 100%); }
+        .bg-green { background: linear-gradient(135deg, #1cba73 0%, #68e0a8 100%); }
+        .bg-blue { background: linear-gradient(135deg, #2b395c 0%, #566894 100%); }
+        .bg-gold { background: linear-gradient(135deg, #e0a96d 0%, #f5cf9e 100%); }
+        .bg-purple { background: linear-gradient(135deg, #8b5cf6 0%, #a78bfa 100%); }
+
+        .speaker-meta h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+
+        .speaker-meta h3 {
+            font-size: 16px;
+            font-weight: 400;
+            color: #78716c;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .talk-title {
+            font-size: 24px;
+            font-weight: 300;
+            color: #f26262;
+            line-height: 1.3;
+            margin-top: 15px;
+            margin-bottom: 20px;
+        }
+
+        .talk-content {
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: #333;
+            max-width: 850px;
+        }
+
+        .talk-content p {
+            margin-bottom: 20px;
+        }
+
+        .talk-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bio-note {
+            margin-top: 25px;
+            padding: 15px 20px;
+            background-color: #fafaf9;
+            border-left: 3px solid #2b395c;
+            font-size: 16px;
+            color: #555;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .video-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #f26262;
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 400;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            transition: background-color 0.2s;
+        }
+
+        .video-btn:hover {
+            background-color: #d94e4e;
+        }
+
+        @media (max-width: 768px) {
+            .speaker-header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .speaker-avatar-circle {
+                width: 70px;
+                height: 70px;
+                font-size: 24px;
+            }
+            .speaker-meta h2 {
+                font-size: 22px;
+            }
+            .talk-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-image-container">
+        <a href="index.html">
+            <img src="BackgroundSementara.jpeg" alt="Kolase Kota Seni Background" style="width: 100%; display: block; object-fit: cover;">
+        </a>
+    </div>
+
+    <main style="padding: 70px 80px; flex-grow: 1; background-color: #fff;">
+        <div style="max-width: 1000px; margin: 0 auto;">
+            <a href="events.html" style="text-decoration: none; color: #f26262; font-size: 16px; font-weight: 300; display: inline-block; margin-bottom: 20px;">
+                &larr; Back to Events
+            </a>
+            
+            <h1 style="font-size: 42px; font-weight: 200; margin-bottom: 8px; color: #1a1a1a; line-height: 1.2;">
+                Diskusi Publik: Sabtu, 1 Agustus 2026
+            </h1>
+            <p style="font-size: 18px; font-weight: 300; color: #78716c; margin-bottom: 30px;">
+                Waktu: 10:00 - 12:00 WIB &bull; Tempat: Cikini01, Balai RW01, Jl. Tino Sidin, Cikini
+            </p>
+
+            <div style="font-size: 20px; font-weight: 300; line-height: 1.6; color: #444; margin-bottom: 30px;">
+                Diskusi publik kali ini mengusung tema eksplorasi kebudayaan urban, arsitektur kemasyarakatan, serta kolaborasi seni partisipatif di dalam ruang hidup perkotaan. Berikut adalah para pembicara dan fokus diskusi yang dihadirkan:
+            </div>
+
+            <!-- Speakers Navigation -->
+            <div class="speakers-nav">
+                <a href="#melani" class="speaker-btn">Prof. Melani Budianta</a>
+                <a href="#evawani" class="speaker-btn">Prof. Ir. Evawani Ellisa</a>
+                <a href="#zeffry" class="speaker-btn">Prof. Dr. Zeffry Alkatiri</a>
+                <a href="#indah" class="speaker-btn">Dr. Indah Tjahjawulan</a>
+                <a href="#dymussaga" class="speaker-btn">Dymussaga Miraviori</a>
+            </div>
+
+            <!-- Speaker 1 -->
+            <section id="melani" class="speaker-section">
+                <div class="speaker-header">
+                    <div class="speaker-avatar-circle bg-red">MB</div>
+                    <div class="speaker-meta">
+                        <h2>Prof. Melani Budianta, PhD</h2>
+                        <h3>Fakultas Ilmu Pengetahuan Budaya (FIB UI)</h3>
+                    </div>
+                </div>
+                <div class="talk-title">
+                    Lumbung Budaya di Sepanjang Gang
+                </div>
+                <div class="talk-content">
+                    <p>
+                        Mengingatkan kembali pada apa yang pernah disampaikannya di orasi budaya DKJ 2020 dengan judul: "Lumbung Budaya di Sepanjang Gang".
+                    </p>
+                    <a href="https://www.youtube.com/live/tRsgKTdtOrc?si=ZBCoFiPGWCTrL2l" target="_blank" class="video-btn">
+                        <span>▶</span> Tonton Orasi Budaya
+                    </a>
+                    <p>
+                        Melani menekankan pentingnya menghimpun sumber daya budaya kolektif di kampung. Ragamnya berbeda sesuai konteks kampungnya: Ingatan kolektif, pengetahuan sehari-hari tentang <em>urban farming</em> dan jamu untuk kesehatan, keterampilan bela diri, sejarah kampung, kuliner lokal. Membangun suasana guyub dan kebersamaan, mencari siasat bersama untuk atasi hidup di kota dengan berbagai masalahnya — itulah kunci keberlanjutan kampung urban.
+                    </p>
+                    <div class="bio-note">
+                        <strong>Tentang Pembicara:</strong> Melani adalah anggota Komisi Kebudayaan AIPI, Guru Besar Emeritus Universitas Katolik Widya Mandala Surabaya, dan anggota Komisi Integritas Akademik IKJ.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Speaker 2 -->
+            <section id="evawani" class="speaker-section">
+                <div class="speaker-header">
+                    <div class="speaker-avatar-circle bg-green">EE</div>
+                    <div class="speaker-meta">
+                        <h2>Prof. Ir. Evawani Ellisa, M.Eng, PhD</h2>
+                        <h3>Fakultas Teknik (FT UI)</h3>
+                    </div>
+                </div>
+                <div class="talk-title">
+                    Membaca Kota dari Kampung Cikini, Kelurahan Pegangsaan: Catatan Longitudinal tentang Arsitektur, Memori, dan Kehidupan Sehari-hari
+                </div>
+                <div class="talk-content">
+                    <p>
+                        Membaca Kampung Cikini di Kelurahan Pegangsaan bukan berarti melihatnya sebagai kawasan padat yang menunggu ditata, melainkan sebagai kritik terhadap cara kota modern memahami dirinya sendiri. Selama ini kampung kota terlalu sering dilihat melalui bahasa kekurangan: kumuh, sempit, tidak teratur, rawan, dan informal. Cara pandang seperti ini membuat kehidupan warga hanya tampak sebagai masalah perencanaan, bukan sebagai pengetahuan kota.
+                    </p>
+                    <p>
+                        Melalui pengalaman longitudinal lebih dari satu dekade bersama warga, Kampung Cikini Kramat memperlihatkan kenyataan yang lebih kompleks. Di balik gang sempit, rumah kontrakan, pasar, sungai, balai RW, ruang ibadah, dan ruang-ruang kecil yang luput dari peta google maupun peta resmi, terdapat praktik urban yang terus bekerja: berbagi ruang, mengatur konflik, merawat tetangga, membuka ekonomi kecil, menjaga ingatan, dan menegosiasikan batas hidup di tengah tekanan kota pusat.
+                    </p>
+                    <p>
+                        Kampung Cikini menunjukkan bahwa kebudayaan urban tidak hanya diproduksi oleh gedung, infrastruktur, investasi, atau agenda pembangunan, tetapi juga oleh warga yang setiap hari membuat kota tetap berjalan. Dalam konteks Kolase Kota Seni, pembacaan ini penting agar program tidak sekadar menjadi program seni atau dokumentasi nostalgia, melainkan infrastruktur pengetahuan kampung. Yang perlu dicatat bukan hanya sejarah tempat, tetapi juga kecerdasan sosial warga dalam mempertahankan ruang hidupnya.
+                    </p>
+                    <div class="bio-note">
+                        <strong>Tentang Pembicara:</strong> Evawani Ellisa merupakan Guru Besar Departemen Arsitektur FTUI.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Speaker 3 -->
+            <section id="zeffry" class="speaker-section">
+                <div class="speaker-header">
+                    <div class="speaker-avatar-circle bg-blue">ZA</div>
+                    <div class="speaker-meta">
+                        <h2>Prof. Dr. Zeffry Alkatiri</h2>
+                        <h3>Fakultas Ilmu Pengetahuan Budaya (FIB UI)</h3>
+                    </div>
+                </div>
+                <div class="talk-title">
+                    AKAMSI (Anak kampung sini) DAN IDENTITASNYA
+                </div>
+                <div class="talk-content">
+                    <p>
+                        Istilah Akamsi sekarang menjadi fenomenal di jagat media sosial, sepertinya merujuk pada pemukim lama, khususnya ditujukan kepada para remaja yang melakukan tindakan kekerasan kepada warga lain yang masuk ke wilayahnya. Akamsi sendiri merupakan singkatan atau akronim dari Anak Kampung Sini. Istilah gaul ini ditujukan bagi orang-orang yang berasal dari daerah setempat atau warga lokal yang menguasai seluk-beluk wilayah tempat tinggalnya. Saking populernya, kata ini bahkan telah resmi masuk ke dalam Kamus Besar Bahasa Indonesia (KBBI).
+                    </p>
+                    <p>
+                        Kekuatan algoritma media sosial seperti TikTok dan Instagram berhasil mengubahnya menjadi tren budaya pop yang masif yang lebih mengarah kepada satir parodi dan bahkan sampai pembulian.
+                    </p>
+                    <p>
+                        Banyak kreator konten membuat video komedi yang memparodikan kekuatan atau ciri khas akamsi atau juga video yang memperlihatkan kearogansian seseorang yang menganggap dirinya sebagai pemukim dari kampung tersebut, yang memperlihatkan identitasnya sebagai pemukim lama yang perlu dihormati dan boleh sekehendak hati melakukan sesuatu di luar kebiasaan umum. Komen-komen warganet (netizen) akan berhamburan jika melihat video yang memparodikan kesombongan seseorang di suatu wilayah tertentu, yang menunjukkan bahwa orang itu tinggal dan bermukim di wilayah tersebut. 
+                    </p>
+                    <p>
+                        Jadi, Istilah Akamsi bisa menjadi parodi satir yang humoris, tetapi juga dapat menjadi kebencian terhadap perilaku seseorang yang melakukan tindakan sewenang-wenang terhadap orang lain. Fenomena ini menjadi bagian dan identitas dari kehidupan warga kota, khususnya di wilayah pemukiman padat di Jakarta.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Speaker 4 -->
+            <section id="indah" class="speaker-section">
+                <div class="speaker-header">
+                    <div class="speaker-avatar-circle bg-gold">IT</div>
+                    <div class="speaker-meta">
+                        <h2>Dr. Indah Tjahjawulan, M.Sn</h2>
+                        <h3>Universitas Bunda Mulia (UBM)</h3>
+                    </div>
+                </div>
+                <div class="talk-title">
+                    Dari Kampus ke Kampung: Menggerakkan Seni Partisipatif Bersama Warga Kampung Kota
+                </div>
+                <div class="talk-content">
+                    <p>
+                        Kolaborasi antara perguruan tinggi seni dan warga kampung-kota melalui seni partisipatif meruntuhkan gagasan bahwa seni hanya milik galeri eksklusif. Seni justru hadir dan menjadi bagian dari kehidupan sehari-hari warga. Kolaborasi antara kampus dan warga kampung kota memungkinkan adanya ruang belajar yang setara (<em>co-learning</em>) di mana metodologi akademik selaras dengan kearifan lokal dengan kesempatan belajar yang setara tanpa merendahkan.
+                    </p>
+                    <p>
+                        Dalam kolaborasi ini, akademisi tidak bertindak sebagai instruktur melainkan sebagai fasilitator yang juga membantu dan menyediakan alat-alat seni. Metode penciptaan bersama ini mengubah penonton pasif dari warga pasif menjadi orang yang kreatif. Warga menyusun cerita sehari-hari mereka, menjaga memori kolektif, dan dengan begitu masalah lokal menjadi karya nyata. Mereka mengubah ruang publik — gang dan pos ronda, misalnya — menjadi momen budaya bersama tempat komunitas urban merebut kembali wilayahnya.
+                    </p>
+                    <p>
+                        Selain itu, upaya seperti ini akan memiliki argumen bahwa kampung-kota bukanlah soal marginalitas, tetapi justru menjadi laboratorium budaya. Seni mengambil peran sebagai jembatan atau "ruang ketiga" untuk meruntuhkan penghalang segregasi sosial antara komunitas, badan akademik, dan pemerintah. Melalui seni, dialog budaya terjalin sehingga aspirasi dibagikan tanpa ada yang terhambat oleh birokrasi.
+                    </p>
+                    <p>
+                        Pada akhirnya, kolaborasi semacam ini memiliki dampak jangka panjang yang sangat signifikan. Seni menjadi sarana advokasi humanistik sehingga aspirasi dan kekhawatiran penduduk dapat dikomunikasikan secara efektif kepada pembuat kebijakan. Pengalaman artistik ini juga membangun modal sosial dengan ikatan gotong royong dan perluasan jaringan. Dan pada akhirnya, partisipasi dalam proyek ini menciptakan kemandirian sehingga ruang ekspresi budaya di kampung-kota tetap hidup dan bersemangat bahkan setelah peran kampus berakhir.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Speaker 5 -->
+            <section id="dymussaga" class="speaker-section">
+                <div class="speaker-header">
+                    <div class="speaker-avatar-circle bg-purple">DM</div>
+                    <div class="speaker-meta">
+                        <h2>Dymussaga Miraviori</h2>
+                        <h3>PhD (Candidate), UC Riverside</h3>
+                    </div>
+                </div>
+                <div class="talk-title">
+                    Fokus Kajian Kebudayaan &amp; Ruang Urban
+                </div>
+                <div class="talk-content">
+                    <p>
+                        Sebagai pembicara lintas disiplin, Dymussaga Miraviori mengkaji relasi dinamika sosial kultural masyarakat urban serta bagaimana seni dan penelitian budaya terintegrasi dalam merespons ruang hidup perkotaan kontemporer.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

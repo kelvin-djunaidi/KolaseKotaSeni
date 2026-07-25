@@ -16,25 +16,33 @@ body {
 .hero-container {
     position: relative;
     width: 100%;
-    height: 70vh; /* Takes up most of the viewport */
+    height: 70vh;
+    /* Takes up most of the viewport */
     overflow: hidden;
     background-color: #f7f3f0;
 }
 
 .hero-bg {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('bg-city.png');
     background-size: cover;
     background-position: center;
     opacity: 0.6;
-    filter: sepia(0.3) contrast(0.85) grayscale(0.5); /* Simulating the faded aesthetic */
+    filter: sepia(0.3) contrast(0.85) grayscale(0.5);
+    /* Simulating the faded aesthetic */
 }
 
 /* A soft gradient overlay to add warmth/color */
 .color-overlay {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(135deg, rgba(237, 219, 212, 0.5) 0%, rgba(200, 220, 200, 0.4) 100%);
     pointer-events: none;
 }
@@ -42,7 +50,10 @@ body {
 /* Geometric overlays */
 .geometric-shapes {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
     overflow: hidden;
 }
@@ -57,7 +68,8 @@ body {
     background-color: #f26262;
     top: -20%;
     left: 36%;
-    transform: rotate(20deg); /* Skewed right */
+    transform: rotate(20deg);
+    /* Skewed right */
 }
 
 .thick-green {
@@ -66,7 +78,8 @@ body {
     background-color: #1cba73;
     top: -20%;
     left: 65%;
-    transform: rotate(-35deg); /* Skewed left */
+    transform: rotate(-35deg);
+    /* Skewed left */
 }
 
 .thick-black {
@@ -113,12 +126,14 @@ header {
     line-height: 1.05;
     font-weight: 500;
     letter-spacing: 2px;
-    color: #2b395c; /* Dark blue */
+    color: #2b395c;
+    /* Dark blue */
 }
 
 .logo-text span {
     font-size: 26px;
-    color: #8c7d7d; /* Warm light brownish grey */
+    color: #8c7d7d;
+    /* Warm light brownish grey */
     font-weight: 300;
     letter-spacing: 1px;
 }
@@ -129,7 +144,8 @@ header {
     padding: 70px 80px;
     background-color: #fff;
     gap: 20px;
-    flex-grow: 1; /* Fills remaining height */
+    flex-grow: 1;
+    /* Fills remaining height */
 }
 
 .column {
@@ -137,13 +153,22 @@ header {
     flex-direction: column;
 }
 
-.col-1 { flex: 0 0 25%; }
-.col-2 { flex: 0 0 45%; }
-.col-3 { flex: 0 0 30%; }
+.col-1 {
+    flex: 0 0 25%;
+}
+
+.col-2 {
+    flex: 0 0 45%;
+}
+
+.col-3 {
+    flex: 0 0 30%;
+}
 
 .column h2 {
     font-size: 42px;
-    font-weight: 200; /* Very thin font */
+    font-weight: 200;
+    /* Very thin font */
     margin-bottom: 24px;
     letter-spacing: -0.8px;
     color: #1a1a1a;
@@ -176,11 +201,14 @@ header {
     .content-section {
         padding: 50px 40px;
     }
+
     .column h2 {
         font-size: 32px;
     }
+
     header {
-        top: 30px; left: 30px;
+        top: 30px;
+        left: 30px;
     }
 }
 
@@ -190,15 +218,85 @@ header {
         padding: 40px 20px;
         gap: 40px;
     }
+
     .hero-container {
         height: 50vh;
     }
+
     .thick-black {
         top: 60%;
         left: 0;
         width: 100%;
     }
-    .pink-line, .light-green-rect {
-        display: none; /* Simplify on mobile */
+
+    .pink-line,
+    .light-green-rect {
+        display: none;
+        /* Simplify on mobile */
+    }
+}
+
+/* Header image container for all menu pages */
+.header-image-container {
+    width: 100%;
+    height: 35vh;
+    /* A nice banner height for subpages */
+    overflow: hidden;
+}
+
+.header-image-container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: left 20%;
+}
+
+/* Home Page fit-to-screen styling */
+body.home-page {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+body.home-page .header-image-container {
+    flex: 1;
+    height: auto;
+    /* Override the fixed height to be flexible */
+    min-height: 0;
+    overflow: hidden;
+}
+
+body.home-page .content-section {
+    flex: 0 0 auto;
+    padding: 40px 80px;
+}
+
+/* Adjustments for smaller heights or screens */
+@media (max-height: 700px) {
+    body.home-page .content-section {
+        padding: 20px 80px;
+    }
+
+    body.home-page .column h2 {
+        margin-bottom: 12px;
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    body.home-page {
+        height: auto;
+        overflow: auto;
+    }
+
+    body.home-page .header-image-container {
+        height: 35vh;
+        flex: none;
+    }
+
+    body.home-page .content-section {
+        padding: 30px 20px;
     }
 }
