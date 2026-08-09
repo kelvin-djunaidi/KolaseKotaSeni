@@ -29,8 +29,19 @@
             style="font-size: 20px; font-weight: 300; line-height: 1.6; max-width: 800px; color: #444; margin-bottom: 20px;">
             Ongoing discussions, expert panels, and academic discourse focused on urban arts and mapping histories.
         </p>
+        <!-- Search Bar -->
+        <div style="margin-bottom: 30px; margin-top: 20px;">
+            <input type="text" id="searchBar" placeholder="Search articles..." 
+                style="width: 100%; max-width: 400px; padding: 12px 18px; font-size: 16px; font-weight: 300; border: 1px solid #ccc; border-radius: 4px; outline: none; font-family: inherit; transition: border-color 0.2s, box-shadow 0.2s;"
+                onfocus="this.style.borderColor='#375a9e'; this.style.boxShadow='0 0 5px rgba(55, 90, 158, 0.2)';" 
+                onblur="this.style.borderColor='#ccc'; this.style.boxShadow='none';"
+                oninput="filterArticles()">
+        </div>
+
         <div style="margin-bottom: 40px; margin-top: 20px;">
-            <ul style="list-style: none; padding-left: 0;">
+            <ul id="articlesList" style="list-style: none; padding-left: 0;">
+                <li><a href="view-discourse-pdf.html?file=Discourses/01WajahBaruCikini_AntaraRevitalisasiEstetikdanBayang-Bayang%20Gentrifikasi.docx.pdf&title=Wajah%20Baru%20Cikini:%20Antara%20Revitalisasi%20Estetik%20dan%20Bayang-Bayang%20Gentrifikasi"
+                        style="font-size: 22px; font-weight: 400; color: #375a9e; text-decoration: none; display: inline-block; margin-bottom: 10px;">Wajah Baru Cikini: Antara Revitalisasi Estetik dan Bayang-Bayang Gentrifikasi (PDF) &rarr;</a></li>
                 <li><a href="beberapa-pokok-pikiran-dari-riset-kali-pasir.html"
                         style="font-size: 22px; font-weight: 400; color: #375a9e; text-decoration: none; display: inline-block; margin-bottom: 10px;">Beberapa
                         Pokok Pikiran dari Riset Kali Pasir &rarr;</a></li>
@@ -44,12 +55,40 @@
                         style="font-size: 22px; font-weight: 400; color: #375a9e; text-decoration: none; display: inline-block; margin-bottom: 10px;">Warga
                         Kalipasir, Saksi dan Pelaku Perubahan Zaman &rarr;</a></li>
             </ul>
+            <div id="noResultsMessage" style="display: none; font-size: 18px; font-weight: 300; color: #888; margin-top: 20px;">
+                No articles match your search.
+            </div>
         </div>
         <a href="index.html"
             style="text-decoration: none; color: #f26262; font-size: 18px; font-weight: 300; transition: transform 0.2s; display: inline-block;">
             &larr; Back to Navigation
         </a>
     </main>
+
+    <script>
+        function filterArticles() {
+            const query = document.getElementById('searchBar').value.toLowerCase().trim();
+            const items = document.querySelectorAll('#articlesList li');
+            let hasResults = false;
+            
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'block';
+                    hasResults = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            const noResults = document.getElementById('noResultsMessage');
+            if (hasResults) {
+                noResults.style.display = 'none';
+            } else {
+                noResults.style.display = 'block';
+            }
+        }
+    </script>
 </body>
 
 </html>

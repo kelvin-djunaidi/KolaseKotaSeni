@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discourse PDF Viewer - KKS Kolase Kota Seni</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@100;300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+        .pdf-container {
+            width: 100%;
+            height: 80vh;
+            min-height: 600px;
+            margin-top: 24px;
+            margin-bottom: 24px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            background-color: #f7f7f7;
+        }
+
+        .fallback-message {
+            padding: 20px;
+            background-color: #fcf8e3;
+            border: 1px solid #faebcc;
+            color: #8a6d3b;
+            border-radius: 4px;
+            margin-top: 15px;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #375a9e;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: 400;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+
+        .download-btn:hover {
+            background-color: #2b395c;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-image-container">
+        <a href="index.html">
+            <img src="BackgroundSementara.jpeg" alt="Kolase Kota Seni Background"
+                style="width: 100%; display: block; object-fit: cover;">
+        </a>
+    </div>
+
+    <main style="padding: 70px 80px; flex-grow: 1; background-color: #fff;">
+        <h1 id="article-title" style="font-size: 42px; font-weight: 200; margin-bottom: 12px; color: #1a1a1a;">
+            Loading Document...
+        </h1>
+        
+        <p id="article-meta" style="font-size: 16px; font-weight: 300; color: #666; margin-bottom: 24px; display: none;">
+            Format: PDF Document
+        </p>
+
+        <!-- Fallback download button (for browsers/devices that block inline PDFs, e.g., mobile) -->
+        <div id="mobile-fallback" class="fallback-message" style="display: none;">
+            Note: Mobile browsers may not preview PDF files directly inside the page. 
+            You can download and read the file here: <br>
+            <a id="fallback-link" href="#" class="download-btn" target="_blank">Download PDF File</a>
+        </div>
+
+        <!-- Dynamic PDF Embed Container -->
+        <div id="viewer-wrapper">
+            <iframe id="pdf-viewer" class="pdf-container" src="" frameborder="0"></iframe>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <a href="discourse.html"
+                style="text-decoration: none; color: #f26262; font-size: 18px; font-weight: 300; transition: transform 0.2s; display: inline-block;">
+                &larr; Back to Discourse Navigation
+            </a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get URL params: ?file=path/to/file.pdf&title=Document%20Title
+            const params = new URLSearchParams(window.location.search);
+            const fileUrl = params.get('file');
+            const titleText = params.get('title');
+
+            const titleEl = document.getElementById('article-title');
+            const iframeEl = document.getElementById('pdf-viewer');
+            const metaEl = document.getElementById('article-meta');
+            const fallbackEl = document.getElementById('mobile-fallback');
+            const fallbackLink = document.getElementById('fallback-link');
+
+            if (titleText) {
+                titleEl.textContent = titleText;
+                document.title = titleText + " - KKS Kolase Kota Seni";
+            }
+
+            if (fileUrl) {
+                // Set the iframe source
+                iframeEl.src = fileUrl;
+                metaEl.style.display = 'block';
+
+                // Configure fallback link for mobile/downloads
+                fallbackLink.href = fileUrl;
+                fallbackEl.style.display = 'block';
+
+                // Check if user is on a mobile device to advise download
+                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+                if (isMobile) {
+                    // Reduce iframe height or hide it entirely to focus on download button on mobile
+                    iframeEl.style.height = '400px';
+                }
+            } else {
+                titleEl.textContent = "No Document Specified";
+                document.getElementById('viewer-wrapper').innerHTML = `
+                    <div class="fallback-message" style="background-color: #f2dede; border-color: #ebccd1; color: #a94442;">
+                        Error: No PDF file path specified in the URL. Example usage: 
+                        <code>view-discourse-pdf.html?file=assets/document.pdf&title=Document Title</code>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+
+</html>
